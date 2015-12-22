@@ -3,6 +3,6 @@
     'use strict';
 
     angular
-        .module('iBrowser.home', []);
+        .module('iBrowser.home',['ngAudio']);
 
 })();
