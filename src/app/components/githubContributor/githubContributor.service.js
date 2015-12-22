@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('angular')
+    .module('iBrowser')
     .factory('githubContributor', githubContributor);
 
   /** @ngInject */

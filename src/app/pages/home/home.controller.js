@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('angular.home')
+        .module('iBrowser.home')
         .controller('HomeController', HomeController);
 
     /** @ngInject */

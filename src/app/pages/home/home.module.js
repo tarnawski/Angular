@@ -3,6 +3,6 @@
     'use strict';
 
     angular
-        .module('angular.home', []);
+        .module('iBrowser.home', []);
 
 })();

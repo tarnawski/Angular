@@ -3,7 +3,7 @@
   'use strict';
 
   angular
-    .module('angular')
+    .module('iBrowser')
     .constant('malarkey', malarkey)
     .constant('moment', moment);
 

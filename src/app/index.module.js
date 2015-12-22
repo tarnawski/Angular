@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('angular', [
+    .module('iBrowser', [
       'ngAnimate',
       'ngCookies',
       'ngTouch',
@@ -14,7 +14,7 @@
       'ui.bootstrap',
       'toastr',
 
-      'angular.home'
+      'iBrowser.home'
     ]);
 
 })();
