@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('iBrowser')
+    .module('angular')
     .directive('acmeNavbar', acmeNavbar);
 
   /** @ngInject */

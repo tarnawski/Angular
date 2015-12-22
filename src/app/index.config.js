@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('iBrowser')
+    .module('angular')
     .config(config);
 
   /** @ngInject */
