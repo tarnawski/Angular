@@ -1,0 +1,62 @@
+<div class="bg-img">
+  <img src="assets/images/home_bg.jpg"/>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8">
+      <div class="logo">
+        <h1>iBrowser</h1>
+      </div>
+    </div>
+    <div class="col-xs-4 text-right menu">
+      <div class="item">
+        <h5><a href="#">HISTORY</a></h5>
+      </div>
+      <div class="item">
+        <h5><a href="#">FAVOURITES</a></h5>
+      </div>
+    </div>
+  </div>
+  <div class="box">
+    <div class="row">
+      <div class="col-xs-5">
+        <img class="songImage" ng-src="{{song.oryginalImage}}"/>
+      </div>
+      <div class="col-xs-7">
+        <!-- {{song}} -->
+        <h1>{{song.trackName}}</h1>
+        <h2>{{song.collectionName}}</h2>
+        <h3>{{song.artistName}}</h3>
+        <div class="audio">
+          <button ng-click='song.audio.paused ? song.audio.play() : song.audio.pause()' type="button" class="btn btn-info btn-sm">
+            <span class="glyphicon glyphicon-play"></span> Play
+          </button>
+          <button ng-click='song.audio.restart()' type="button" class="btn btn-info btn-sm">
+            <span class="glyphicon glyphicon-stop"></span> Stop
+          </button>
+          <button ng-click='song.audio.muting = !song.audio.muting' type="button" class="btn btn-info btn-sm">
+            <span class="glyphicon glyphicon-volume-off"></span> Mute
+          </button>
+       </div>
+       <a href="{{song.trackViewUrl}}">
+         <img src="assets/images/iTunes-icon.png"/> Look in iTunes
+       </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+
+
+          <div ng-repeat="otherSong in song.otherInAlbum.results  | limitTo:10:1">
+            <div class="images">
+            <img ng-src="{{otherSong.artworkUrl100}}"/>
+            <h6>{{otherSong.collectionName}}</h6>
+          </div>
+
+          </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
