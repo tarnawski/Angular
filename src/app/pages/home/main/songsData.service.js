@@ -5,10 +5,10 @@
         .module('iBrowser')
         .service('songsDataService', songsDataService);
 
-    songsDataService.$inject = ['$resource'];
+    songsDataService.$inject = ['$resource', 'CONSTANTS'];
 
     /** @ngInject */
-    function songsDataService($resource) {
+    function songsDataService($resource, CONSTANTS) {
         var service = {
             getSongsList: getSongsList
         };
@@ -18,8 +18,7 @@
         /////////////
 
         function getSongsList() {
-
-            return $resource( 'https://itunes.apple.com/search?term=:query&limit=:limit',{query: '@query', limit: '@limit'}, {
+            return $resource(CONSTANTS.BASE_URL + '/search?term=:query&limit=:limit',{query: '@query', limit: '@limit'}, {
                 search: {
                     method: 'JSONP',
                     params: {
@@ -29,7 +28,6 @@
                     }
                 }
             });
-
         }
     }
     })();

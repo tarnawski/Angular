@@ -5,6 +5,8 @@
   angular
     .module('iBrowser')
     .constant('malarkey', malarkey)
-    .constant('moment', moment);
-
+    .constant('moment', moment)
+    .constant('CONSTANTS', {
+       BASE_URL: 'https://itunes.apple.com'
+     });
 })();
