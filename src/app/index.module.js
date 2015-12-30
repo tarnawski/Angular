@@ -15,6 +15,7 @@
       'ui.bootstrap',
       'toastr',
       'infinite-scroll',
+      'ngAside',
 
       // App modules
       'iBrowser.home',

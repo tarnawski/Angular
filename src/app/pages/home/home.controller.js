@@ -7,8 +7,14 @@
         .controller('HomeController', HomeController);
 
     /** @ngInject */
-    function HomeController($scope, songsDataService)
+    function HomeController($scope, songsDataService, ngAudio, $aside)
     {
+      var asideInstance = $aside.open({
+        templateUrl: 'app/pages/single/single.html',
+        placement: 'left',
+        size: 'lg'
+      });
+
       var vm =this;
       vm.query = '';
       vm.results = [];
