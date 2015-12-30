@@ -32,8 +32,5 @@
               vm.results = data.results;
           });
           };
-
-
-
     }
 })();

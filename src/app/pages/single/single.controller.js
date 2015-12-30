@@ -19,9 +19,8 @@
         });
 
         data.results[0]['otherInAlbum'] = otherInAlbum;
-        console.log(otherInAlbum);
-
         $scope.song = data.results[0];
+
       });
     }
 })();
