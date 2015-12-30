@@ -33,6 +33,7 @@
         <!-- Song details -->
         <h1>{{song.trackName}} - {{song.artistName}}</h1>
         <h2>{{song.collectionName}}</h2>
+        {{song.artistDescription}}
 
         <!-- Submenu track -->
         <div class="audio">
@@ -52,7 +53,10 @@
        <a href="{{song.trackViewUrl}}">
          <img src="assets/images/iTunes-icon.png"/> Look in iTunes
        </a>
+       <div class="authorDescription" ng-bind-html="artistDescription"></div>
       </div>
+      <!-- Author description -->
+
     </div>
 
     <!-- Show other song current autor -->
