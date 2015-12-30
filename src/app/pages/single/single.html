@@ -4,9 +4,11 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-8">
+      <a href="/">
       <div class="logo">
         <h1>iBrowser</h1>
       </div>
+      </a>
     </div>
     <div class="col-xs-4 text-right menu">
       <div class="item">
@@ -24,9 +26,8 @@
       </div>
       <div class="col-xs-7">
         <!-- {{song}} -->
-        <h1>{{song.trackName}}</h1>
+        <h1>{{song.trackName}} - {{song.artistName}}</h1>
         <h2>{{song.collectionName}}</h2>
-        <h3>{{song.artistName}}</h3>
         <div class="audio">
           <button ng-click='song.audio.paused ? song.audio.play() : song.audio.pause()' type="button" class="btn btn-info btn-sm">
             <span class="glyphicon glyphicon-play"></span> Play
@@ -37,22 +38,27 @@
           <button ng-click='song.audio.muting = !song.audio.muting' type="button" class="btn btn-info btn-sm">
             <span class="glyphicon glyphicon-volume-off"></span> Mute
           </button>
+          <button ng-click='song.audio.muting = !song.audio.muting' type="button" class="btn btn-default btn-sm">
+            <b>Add to favourites if you <img src="assets/images/heart.png"/> it!</b>
+          </button>
        </div>
        <a href="{{song.trackViewUrl}}">
          <img src="assets/images/iTunes-icon.png"/> Look in iTunes
        </a>
+
       </div>
+
     </div>
     <div class="row">
       <div class="col-xs-12">
-
-
+      <h2>Other songs this author:</h2>
           <div ng-repeat="otherSong in song.otherInAlbum.results  | limitTo:10:1">
-            <div class="images">
-            <img ng-src="{{otherSong.artworkUrl100}}"/>
-            <h6>{{otherSong.collectionName}}</h6>
-          </div>
-
+            <a href="#/{{otherSong.trackId}}">
+              <div class="images">
+              <img ng-src="{{otherSong.artworkUrl100}}"/>
+                <h6>{{otherSong.trackName}}</h6>
+              </div>
+            </a>
           </div>
 
 

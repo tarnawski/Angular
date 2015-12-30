@@ -1,9 +1,11 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-8">
+      <a href="/">
       <div class="logo">
         <h1>iBrowser</h1>
       </div>
+      </a>
     </div>
     <div class="col-xs-4 text-right menu">
       <div class="item">
@@ -32,15 +34,16 @@
       </div>
     </div>
   </div>
+  <h1 id="noResults" ng-show="results.length == 0 && query.length > 0">Soory, no results...</h1>
   <div class="results">
     <div infinite-scroll='loadMore()' infinite-scroll-distance='1'>
       <div ng-repeat="song in home.results" >
         <div class="row result">
-          <div class="col-xs-3">
+         <div class="col-xs-3">
             <img ng-src="{{song.artworkUrl100}}"/>
           </div>
           <div class="col-xs-9">
-            <h3><a href="#/{{song.trackId}}">{{song.collectionName}}</a></h3>
+            <h3><a href="#/{{song.trackId}}">{{song.trackName}}</a></h3>
             <h4>{{song.artistName}}</h4>
           </div>
         </div>
