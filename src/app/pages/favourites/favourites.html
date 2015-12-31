@@ -1,1 +1,14 @@
-Your best songs:
+
+<div class="favourites">
+<h3>Your favorite songs:</h3>
+<p><input type="text" ng-model="test"></p>
+<div ng-controller="FavouritiesController">
+  <div ng-repeat="song in songs | filter:test">
+    <a href="#/{{song.trackId}}">
+    <h4>{{song.trackName}}</h4>
+    {{song.artistName}}
+      </a>
+  </div>
+
+</div>
+</div>

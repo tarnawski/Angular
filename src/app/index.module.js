@@ -16,10 +16,12 @@
       'toastr',
       'infinite-scroll',
       'ngAside',
+      'angular-storage',
 
       // App modules
       'iBrowser.home',
-      'iBrowser.single'
+      'iBrowser.single',
+      'iBrowser.favourities'
     ]);
 
 })();

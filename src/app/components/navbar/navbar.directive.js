@@ -25,15 +25,12 @@
       var vm = this;
 
       vm.favourites = function(){
-        var asideInstance = $aside.open({
+          $aside.open({
           templateUrl: 'app/pages/favourites/favourites.html',
           placement: 'left',
           size: 'sm'
         });
       };
-
-      // "vm.creation" is avaible by directive option "bindToController: true"
-      vm.relativeDate = moment(vm.creationDate).fromNow();
     }
   }
 
