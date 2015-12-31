@@ -1,21 +1,28 @@
-<nav class="navbar navbar-static-top navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="https://github.com/Swiip/generator-gulp-angular">
-        <span class="glyphicon glyphicon-home"></span> Gulp Angular
-      </a>
+<!-- Background -->
+<div class="bg-img">
+  <img src="assets/images/home_bg.jpg"/>
+</div>
+
+<div class="container">
+<div class="row">
+  <!-- Logo -->
+  <div class="col-xs-8">
+    <a href="/">
+      <div class="logo">
+        <h1>iBrowser</h1>
+      </div>
+    </a>
+  </div>
+
+  <!-- Menu -->
+  <div class="col-xs-4 text-right menu">
+    <div class="item">
+      <h5><a href="#">HISTORY</a></h5>
+      <hr id="hr_menu"/>
     </div>
-
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
-      <ul class="nav navbar-nav">
-        <li class="active"><a ng-href="#">Home</a></li>
-        <li><a ng-href="#">About</a></li>
-        <li><a ng-href="#">Contact</a></li>
-      </ul>
-
-      <ul class="nav navbar-nav navbar-right acme-navbar-text">
-        <li>Application was created {{ vm.relativeDate }}.</li>
-      </ul>
+    <div class="item">
+      <h5><a ng-click="vm.favourites()">FAVOURITES</a></h5>
     </div>
   </div>
-</nav>
+</div>
+</div>
