@@ -26,7 +26,7 @@
           <button ng-click='song.audio.muting = !song.audio.muting' type="button" class="btn btn-info btn-sm">
             <span class="glyphicon glyphicon-volume-off"></span> Mute
           </button>
-          <button ng-click="single.add()" ng-show="!song.inFavorite" type="button" class="btn btn-default btn-sm">
+          <button ng-click="single.add()" ng-show="!inFavorite()" type="button" class="btn btn-default btn-sm">
             <b>Add to favourites if you <img src="assets/images/heart.png"/> it!</b>
           </button>
        </div>
