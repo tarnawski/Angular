@@ -9,30 +9,43 @@
     /** @ngInject */
     function HomeController($scope, songsDataService, ngAudio)
     {
-        $scope.query = '';
-        $scope.$watchCollection('query', function() {
-          $scope.shouldShow =  true;
-            if ($scope.query.length > 0 ) {
-                $scope.shouldShow =  false;
-                $scope.inputStyle={width: '100%'};
-                $scope.searchStyle={'margin-top': '5px'};
-                songsDataService.getSongsList().search({ query: $scope.query, limit: 10}, function(data) {
-                    $scope.results = data.results;
-                });
-            } else {
-                $scope.inputStyle={width: '230px'}
-                $scope.searchStyle={'margin-top': '15%'};
-                $scope.results = [];
-            }
-        });
+      var vm =this;
+      vm.query = '';
+      vm.results = [];
+      vm.shouldShow = true;
+
+        //$scope.$watchCollection('vm.query', function (query) {
+        //  vm.shouldShow = true;
+        //  if (query) {
+        //    vm.shouldShow = false;
+        //    vm.inputStyle = {width: '100%'};
+        //    vm.searchStyle = {'margin-top': '5px'};
+        //    songsDataService.getSongsList().search({query: query, limit: 10}, function (data) {
+        //      vm.results = data.results;
+        //    });
+        //  } else {
+        //    vm.inputStyle = {width: '230px'};
+        //    vm.searchStyle = {'margin-top': '15%'};
+        //    vm.results = [];
+        //  }
+        //});
+
+
+      vm.search = function(query){
+          vm.shouldShow = false;
+          vm.inputStyle = {width: '70%'};
+          vm.searchStyle = {'margin-top': '5px'};
+
+          songsDataService.getSongsList().search({query: query, limit: 10}, function (data) {
+            vm.results = data.results;
+          });
+
+      };
 
         $scope.loadMore = function() {
-          songsDataService.getSongsList().search({ query: $scope.query, limit: $scope.results.length + 10}, function(data) {
-              $scope.results = data.results;
+          songsDataService.getSongsList().search({ query: vm.query, limit: vm.results.length + 10}, function(data) {
+              vm.results = data.results;
           });
           };
-
-
-
     }
 })();

@@ -1,6 +1,7 @@
 body {
   background-image:url('/assets/images/home_bg.jpg');
   background-repeat:no-repeat;
+  background-attachment: fixed;
   background-size: cover;
   }
 
@@ -20,7 +21,8 @@ a {
   color: white;
   text-align: center;
 
-  input {
+
+  input[type=text] {
     color: white;
     font-size: 20px;
     text-align: center;
@@ -37,13 +39,11 @@ a {
   }
 
   .search-button {
-    margin-top: 10px;
+    margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
     color:white;
     font-size: 20px;
-    text-align: center;
-    padding-top: 8px;
     border: 2px solid white;
   	border-radius: 25px;
   	height: 50px;

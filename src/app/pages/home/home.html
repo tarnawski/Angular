@@ -15,21 +15,21 @@
       </div>
     </div>
   </div>
-  <div class="search" ng-style="searchStyle">
+  <div ng-controller="HomeController as vm">
+  <div class="search" ng-style="vm.searchStyle">
     <div class="row">
       <div class="col-xs-12">
-        <h1 ng-show="shouldShow">Looking for some music?</h1>
-        <h2 ng-show="shouldShow">Find it with your <span>iBrowser</span>.</h2>
-        <input class="texbox" placeholder="SEARCH" ng-model="query" ng-style="inputStyle">
-        <!-- <a href="#">
-          <div class="bg-button">SEARCH</div>
-        </a> -->
+        <h1 ng-show="vm.shouldShow">Looking for some music?</h1>
+        <h2 ng-show="vm.shouldShow">Find it with your <span>iBrowser</span>.</h2>
+        <div ng-style="vm.searchButtonStyle"><input type="text" class="texbox" placeholder="SEARCH" ng-model="vm.query" ng-style="vm.inputStyle"></div>
+        <div class="search-button" ng-style="vm.searchButtonStyle" ng-click="vm.search(vm.query)">SEARCH</div>
+
       </div>
     </div>
   </div>
   <div class="results">
     <div infinite-scroll='loadMore()' infinite-scroll-distance='1'>
-      <div ng-repeat="song in results" >
+      <div ng-repeat="song in vm.results" >
         <div class="row result">
           <div class="col-xs-3">
             <img ng-src="{{song.artworkUrl100}}"/>
@@ -41,5 +41,6 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
 </div>
