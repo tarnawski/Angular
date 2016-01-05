@@ -5,8 +5,6 @@
         .module('iBrowser')
         .service('songsDataService', songsDataService);
 
-    songsDataService.$inject = ['$resource', 'CONSTANTS'];
-
     /** @ngInject */
     function songsDataService($resource, CONSTANTS) {
         var service = {

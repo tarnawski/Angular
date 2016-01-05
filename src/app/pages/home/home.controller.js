@@ -7,34 +7,19 @@
         .controller('HomeController', HomeController);
 
     /** @ngInject */
-    function HomeController($scope, songsDataService, ngAudio)
+    function HomeController($scope, songsDataService)
     {
       var vm =this;
       vm.query = '';
       vm.results = [];
       vm.shouldShow = true;
 
-        //$scope.$watchCollection('vm.query', function (query) {
-        //  vm.shouldShow = true;
-        //  if (query) {
-        //    vm.shouldShow = false;
-        //    vm.inputStyle = {width: '100%'};
-        //    vm.searchStyle = {'margin-top': '5px'};
-        //    songsDataService.getSongsList().search({query: query, limit: 10}, function (data) {
-        //      vm.results = data.results;
-        //    });
-        //  } else {
-        //    vm.inputStyle = {width: '230px'};
-        //    vm.searchStyle = {'margin-top': '15%'};
-        //    vm.results = [];
-        //  }
-        //});
-
-
       vm.search = function(query){
           vm.shouldShow = false;
-          vm.inputStyle = {width: '70%'};
+
           vm.searchStyle = {'margin-top': '5px'};
+          vm.searchInputStyle = {float: 'left', width: '80%'};
+          vm.searchButtonStyle = {'float': 'left', width: '20%'};
 
           songsDataService.getSongsList().search({query: query, limit: 10}, function (data) {
             vm.results = data.results;

@@ -15,21 +15,26 @@
       </div>
     </div>
   </div>
-  <div ng-controller="HomeController as vm">
-  <div class="search" ng-style="vm.searchStyle">
+
+  <div class="search" ng-style="home.searchStyle">
     <div class="row">
       <div class="col-xs-12">
-        <h1 ng-show="vm.shouldShow">Looking for some music?</h1>
-        <h2 ng-show="vm.shouldShow">Find it with your <span>iBrowser</span>.</h2>
-        <div ng-style="vm.searchButtonStyle"><input type="text" class="texbox" placeholder="SEARCH" ng-model="vm.query" ng-style="vm.inputStyle"></div>
-        <div class="search-button" ng-style="vm.searchButtonStyle" ng-click="vm.search(vm.query)">SEARCH</div>
-
+        <h1 ng-show="home.shouldShow">Looking for some music?</h1>
+        <h2 ng-show="home.shouldShow">Find it with your <span>iBrowser</span>.</h2>
+        <div>
+        <div class="search-inputbox" ng-style="home.searchInputStyle">
+          <input type="text" class="texbox" placeholder="SEARCH" ng-model="home.query" ng-style="home.inputStyle">
+        </div>
+          <div class="search-box" ng-style="home.searchButtonStyle">
+            <div class="search-box-button" ng-click="home.search(home.query)">SEARCH</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <div class="results">
     <div infinite-scroll='loadMore()' infinite-scroll-distance='1'>
-      <div ng-repeat="song in vm.results" >
+      <div ng-repeat="song in home.results" >
         <div class="row result">
           <div class="col-xs-3">
             <img ng-src="{{song.artworkUrl100}}"/>
@@ -42,5 +47,5 @@
       </div>
     </div>
   </div>
-  </div>
+
 </div>
