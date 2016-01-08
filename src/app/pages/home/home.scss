@@ -1,0 +1,72 @@
+body {
+  background-image:url('/assets/images/home_bg.jpg');
+  background-repeat:no-repeat;
+  background-size: cover;
+  }
+
+a {
+  &:link, &:visited, &:hover, &:active {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.logo{
+  color: white;
+}
+
+.search{
+  margin-top: 15%;
+  color: white;
+  text-align: center;
+
+  input {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    border: 2px solid white;
+  	border-radius: 25px;
+  	height: 50px;
+  	width: 230px;
+    background-color: transparent;
+    margin-top: 15px;
+  }
+
+  span {
+    font-weight: bold;
+  }
+
+  .search-button {
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    color:white;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 8px;
+    border: 2px solid white;
+  	border-radius: 25px;
+  	height: 50px;
+  	width: 230px;
+    background-color: rgba(255,255,255,0.3);
+  }
+
+  h1{
+      font-size: 50px;
+  }
+
+  h2{
+    font-size: 18px;
+  }
+}
+
+.item{
+  margin: 20px;
+  color: white;
+  float: left;
+
+  hr{
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+}

@@ -3,19 +3,13 @@
 
   angular
     .module('iBrowser')
-    .config(routerConfig);
+    .config(routeConfig);
 
-  /** @ngInject */
-  function routerConfig($stateProvider, $urlRouterProvider) {
-    $stateProvider
-      .state('home', {
-        url: '/',
-        templateUrl: 'app/main/main.html',
-        controller: 'MainController',
-        controllerAs: 'main'
-      });
-
-    $urlRouterProvider.otherwise('/');
-  }
+    /** @ngInject */
+    function routeConfig($urlRouterProvider)
+    {
+        // Default behaviour
+        $urlRouterProvider.otherwise('/');
+    }
 
 })();
