@@ -3,6 +3,7 @@
 
   angular
     .module('iBrowser', [
+      // Plugins
       'ngAnimate',
       'ngCookies',
       'ngTouch',
@@ -13,7 +14,9 @@
       'ui.router',
       'ui.bootstrap',
       'toastr',
+      'infinite-scroll',
 
+      // App modules
       'iBrowser.home'
     ]);
 
