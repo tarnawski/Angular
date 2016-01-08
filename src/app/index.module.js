@@ -17,7 +17,8 @@
       'infinite-scroll',
 
       // App modules
-      'iBrowser.home'
+      'iBrowser.home',
+      'iBrowser.single'
     ]);
 
 })();

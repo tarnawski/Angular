@@ -1,0 +1,74 @@
+<div class="bg-img">
+  <img src="assets/images/home_bg.jpg"/>
+</div>
+
+<div class="container">
+  <div class="row">
+    <!-- Logo -->
+    <div class="col-xs-8">
+      <a href="/">
+      <div class="logo">
+        <h1>iBrowser</h1>
+      </div>
+      </a>
+    </div>
+    <!-- Menu -->
+    <div class="col-xs-4 text-right menu">
+      <div class="item">
+        <h5><a href="#">HISTORY</a></h5>
+      </div>
+      <div class="item">
+        <h5><a href="#">FAVOURITES</a></h5>
+      </div>
+    </div>
+  </div>
+
+  <div class="box">
+    <div class="row">
+      <!-- Album image -->
+      <div class="col-xs-5">
+        <img class="songImage" ng-src="{{song.oryginalImage}}"/>
+      </div>
+      <div class="col-xs-7">
+        <!-- Song details -->
+        <h1>{{song.trackName}} - {{song.artistName}}</h1>
+        <h2>{{song.collectionName}}</h2>
+
+        <!-- Submenu track -->
+        <div class="audio">
+          <button ng-click='song.audio.paused ? song.audio.play() : song.audio.pause()' type="button" class="btn btn-info btn-sm">
+            <span class="glyphicon glyphicon-play"></span> Play
+          </button>
+          <button ng-click='song.audio.restart()' type="button" class="btn btn-info btn-sm">
+            <span class="glyphicon glyphicon-stop"></span> Stop
+          </button>
+          <button ng-click='song.audio.muting = !song.audio.muting' type="button" class="btn btn-info btn-sm">
+            <span class="glyphicon glyphicon-volume-off"></span> Mute
+          </button>
+          <button ng-click='song.audio.muting = !song.audio.muting' type="button" class="btn btn-default btn-sm">
+            <b>Add to favourites if you <img src="assets/images/heart.png"/> it!</b>
+          </button>
+       </div>
+       <a href="{{song.trackViewUrl}}">
+         <img src="assets/images/iTunes-icon.png"/> Look in iTunes
+       </a>
+      </div>
+    </div>
+
+    <!-- Show other song current autor -->
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Other songs this author:</h2>
+        <div ng-repeat="otherSong in song.otherInAlbum.results  | limitTo:10:1">
+          <a href="#/{{otherSong.trackId}}">
+            <div class="images">
+              <img ng-src="{{otherSong.artworkUrl100}}"/>
+              <h6>{{otherSong.trackName}}</h6>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
