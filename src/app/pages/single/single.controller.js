@@ -11,6 +11,20 @@
     {
       var vm = this;
 
+      var history;
+      if(store.get('history')) {
+        history = store.get('history');
+      }
+      if(!history) {
+        store.set('history', [$stateParams.id]);
+
+      }else{
+          history.unshift($stateParams.id);
+          store.set('history', history);
+      }
+
+
+
       vm.add = function(){
 
         var favourites;

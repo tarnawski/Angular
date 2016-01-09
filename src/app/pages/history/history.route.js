@@ -3,17 +3,17 @@
     'use strict';
 
     angular
-        .module('iBrowser.favourities')
+        .module('iBrowser.history')
         .config(routeConfig);
 
 /** @ngInject */
 function routeConfig($stateProvider) {
 $stateProvider
-  .state('favourities', {
-    url: '/favourities',
+  .state('history', {
+    url: '/history',
     templateUrl: 'app/pages/favourites/history.html',
-    controller: 'FavouritiesController',
-    controllerAs: 'favourities'
+    controller: 'HistoryController',
+    controllerAs: 'history'
   });
 }
 

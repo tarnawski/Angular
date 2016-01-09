@@ -21,7 +21,8 @@
       // App modules
       'iBrowser.home',
       'iBrowser.single',
-      'iBrowser.favourities'
+      'iBrowser.favourities',
+      'iBrowser.history'
     ]);
 
 })();

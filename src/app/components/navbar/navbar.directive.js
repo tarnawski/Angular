@@ -31,6 +31,13 @@
           size: 'sm'
         });
       };
+      vm.history = function(){
+        $aside.open({
+          templateUrl: 'app/pages/history/history.html',
+          placement: 'left',
+          size: 'sm'
+        });
+      };
     }
   }
 
