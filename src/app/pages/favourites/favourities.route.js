@@ -10,8 +10,8 @@
 function routeConfig($stateProvider) {
 $stateProvider
   .state('favourities', {
-    url: '/tmp/tmp',
-    templateUrl: 'app/pages/favourities/favourities.html',
+    url: '/favourities',
+    templateUrl: 'app/pages/favourites/favourites.html',
     controller: 'FavouritiesController',
     controllerAs: 'favourities'
   });

@@ -7,7 +7,7 @@
         .controller('HomeController', HomeController);
 
     /** @ngInject */
-    function HomeController($scope, songsDataService, ngAudio, $aside)
+    function HomeController($scope, songsDataService)
     {
       var vm =this;
       vm.query = '';

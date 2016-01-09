@@ -1,14 +1,23 @@
-
 <div class="favourites">
-<h3>Your favorite songs:</h3>
-<p><input type="text" ng-model="test"></p>
-<div ng-controller="FavouritiesController">
-  <div ng-repeat="song in songs | filter:test">
-    <a href="#/{{song.trackId}}">
-    <h4>{{song.trackName}}</h4>
-    {{song.artistName}}
-      </a>
-  </div>
+  <h3>Your favorite songs:</h3>
+  <div ng-controller="FavouritiesController as favourities">
+    <p><input type="text" ng-model="test"></p>
 
+      <div ng-repeat="song in favourities.songs | filter:test">
+        <div class="col-sm-8">
+          <a href="#/{{song.trackId}}">
+            <h4>{{$index + 1}}. {{song.trackName}}</h4>
+            {{song.artistName}}
+          </a>
+        </div>
+        <div class="col-sm-4" style="padding-top: 10px">
+          <a ng-show="!$first" ng-click="favourities.up($index)"><span class="glyphicon glyphicon-arrow-up"></span></a>
+          <a ng-show="!$last" ng-click="favourities.down($index)"><span class="glyphicon glyphicon-arrow-down"></span></a>
+          <a ng-click="favourities.delete($index)"><span class="glyphicon glyphicon-remove"></span></a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
+<script>
+
